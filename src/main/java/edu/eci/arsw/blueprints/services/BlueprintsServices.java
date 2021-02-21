@@ -22,12 +22,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class BlueprintsServices {
    
-    @Autowired
+	@Autowired
+    @Qualifier("InMemoryBlueprintPersistence")
     BlueprintsPersistence bpp=null;
     
     // En la siguiente parte el usuario debe aclarar que tipo de filtrado desea, si quiere filtrado por Muestreo cambiar la etiquita @Qualifier por "Muestreo", pero si desea un filtrado por Redundancia, cambiar la etiqueta @Qualifier por "Redundancia"."
     // Tipos de Filtros "Muestreo", "Redundancia"
-    
     
     @Autowired
     @Qualifier("Muestreo")
@@ -72,5 +72,10 @@ public class BlueprintsServices {
     	}
     	return filtrar;
     }
+
+	public void setBlueprint(Blueprint blue, String author, String bprint) {
+		bpp.getBlueprint(author, bprint).setAuthor(blue.getAuthor());
+		bpp.getBlueprint(author, bprint).setBprint(blue.getName());
+	}
     
 }

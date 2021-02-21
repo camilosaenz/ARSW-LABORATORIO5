@@ -85,6 +85,16 @@ public class Blueprint {
         
         return true;
     }
+
+	public void setAuthor(String author) {
+		this.author = author;
+		
+	}
+
+	public void setBprint(String name) {
+		this.name = name;
+		
+	}
     
     
     

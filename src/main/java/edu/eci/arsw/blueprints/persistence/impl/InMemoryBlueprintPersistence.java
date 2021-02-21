@@ -18,6 +18,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -26,6 +27,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
+@Qualifier("InMemoryBlueprintPersistence")
 public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
     private final Map<Tuple<String,String>,Blueprint> blueprints=new HashMap<>();
@@ -33,9 +35,16 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
     public InMemoryBlueprintPersistence() {
         //load stub data
         Point[] pts=new Point[]{new Point(140, 140),new Point(115, 115)};
-        Blueprint bp=new Blueprint("_authorname_", "_bpname_ ",pts);
+        Blueprint bp=new Blueprint("juan", "PlanoJuan",pts);
         blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
         
+        Point[] pts2=new Point[]{new Point(1, 1),new Point(4, 4)};
+        Blueprint bp2=new Blueprint("juan", "PlanoJuan2",pts2);
+        blueprints.put(new Tuple<>(bp.getAuthor(),bp2.getName()), bp2);
+        
+        Point[] pts3=new Point[]{new Point(1, 1),new Point(4, 4)};
+        Blueprint bp3=new Blueprint("alejo", "PlanoAlejo",pts3);
+        blueprints.put(new Tuple<>(bp.getAuthor(),bp3.getName()), bp3);
     }    
     
     @Override
