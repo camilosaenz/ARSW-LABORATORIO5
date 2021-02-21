@@ -73,7 +73,7 @@ public class BlueprintsServices {
     	return filtrar;
     }
 
-	public void setBlueprint(Blueprint blue, String author, String bprint) {
+	public void setBlueprint(Blueprint blue, String author, String bprint) throws BlueprintNotFoundException {
 		bpp.getBlueprint(author, bprint).setAuthor(blue.getAuthor());
 		bpp.getBlueprint(author, bprint).setBprint(blue.getName());
 	}

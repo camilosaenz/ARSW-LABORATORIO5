@@ -22,3 +22,16 @@ dist/
 nbdist/
 .nb-gradle/
 /nbproject/
+/.DS_Store
+/.gitignore
+/.mvn/
+/ANALISIS_CONCURRENCIA.txt
+/Diagrams.asta
+/README.md
+/img/
+/model.uml
+/model.uml~
+/mvnw
+/mvnw.cmd
+/pom.xml
+/src/
