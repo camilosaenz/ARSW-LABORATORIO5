@@ -1,0 +1,8 @@
+
+    1.Qué condiciones de carrera se podrían presentar?
+      Se podría presentar que empleados de la compañía quieran acceder a los planos de un empleado específico al 
+      tiempo, los quieran editar o se vayan a añadir más planos a un mismo autor.
+    2.Cuales son las respectivas regiones críticas?
+      Encontraríamos una región crítica al momento de actualizar un plano, varios empleados o clientes de la 
+      compañía podrían estar actualizando el mismo plano de un autor o incluso accediendo a este recurso, también 
+      añadiendo más planos al mismo autor al tiempo.
